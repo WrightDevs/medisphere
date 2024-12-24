@@ -318,7 +318,9 @@ option{
   font-family: monospace ;
   font-size:14px;
 }
-
+.newsp{
+  text-align: center;
+}
 .subcontainer{
   display: flex;
   align-items: center;
@@ -403,7 +405,7 @@ option{
     }
    li{
   color: white;
-  margin: 5px 0;
+  margin: 7px 0;
   display: flex;
   justify-content: space-between; 
   margin-bottom: 5px; 
