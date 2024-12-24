@@ -1,6 +1,6 @@
 @font-face {
   font-family: myFont;
-  src: url(wakile.ttf);
+  src: url(/fonts/wakile.ttf);
 }
 
 html{
@@ -82,19 +82,19 @@ width: 90%;
     }
     
 #card1 {
-  background: #1B76D1EB url(pulse-svgrepo-com.svg) no-repeat center center;
+  background: #1B76D1EB url(/pulse-svgrepo-com.svg) no-repeat center center;
   background-size: 100px;
   background-position-x: right;
   background-position-y: bottom;
 }
 #card2 {
-  background: #1B76D1EB url(schedule-calendar-svgrepo-com.svg) no-repeat center center;
+  background: #1B76D1EB url(/schedule-calendar-svgrepo-com.svg) no-repeat center center;
   background-size: 100px;
   background-position-x: right;
   background-position-y: bottom;
 }
 #card3 {
-  background: #1B76D1EB url(opening-hours-svgrepo-com.svg) no-repeat center center;
+  background: #1B76D1EB url(/opening-hours-svgrepo-com.svg) no-repeat center center;
   background-size: 100px;
   background-position-x: right;
   background-position-y: bottom;
