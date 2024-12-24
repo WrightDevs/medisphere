@@ -30,6 +30,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- Favicon -->
+   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <link rel="icon" href="https://www.citycarehospital.com/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <title>Medisphere</title>
@@ -242,49 +243,46 @@ Our core values of compassion, integrity, and innovation drive us to continually
       </div>
     </div>
   </section>
-</div><section class="book container">
-  <h3 class="container" id="book">We Are Always Ready to Help You. Book An Appointment</h3>
-    <div class="hb">
-      <img srcset="" src="/heartbeat-svgrepo-com.svg" alt="">
-    </div>
-    <div class="mb-3">
-  <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="John Doe">
+</div><div class="container mt-5">
+  <h2>Book an Appointment</h2>
+  <div class="mb-3">
+    <input type="text" class="form-control" id="name" placeholder="John Doe" required aria-label="Name">
+  </div>
+  <div class="mb-3">
+    <input type="email" class="form-control" id="email" placeholder="name@example.com" required aria-label="Email">
+  </div>
+  <select class="form-control mb-3" id="department" required aria-label="Department">
+    <option value="" disabled selected>Department</option>
+    <option value="Cardiac Clinic">Cardiac Clinic</option>
+    <option value="Neurology">Neurology</option>
+    <option value="Dentistry">Dentistry</option>
+    <option value="Gastroenterology">Gastroenterology</option>
+  </select>
+  <select class="form-control mb-3" id="doctor" required aria-label="Doctor">
+    <option value="" disabled selected>Doctor</option>
+    <option value="John Doe">John Doe</option>
+    <option value="Ashton Jones">Ashton Jones</option>
+    <option value="Paula Helen">Paula Helen</option>
+  </select>
+  <div class="mb-3">
+    <textarea class="form-control" id="message" rows="5" placeholder="Write your message here" required aria-label="Message"></textarea>
+  </div>
+  <button type="button" class="btn btn-primary bookappointment">Book an Appointment</button>
 </div>
-    <div class="mb-3">
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-<select class="form-select" aria-label="Default select example">
-  <option selected>Department</option>
-  <option value="1">Cardiac Clinic</option>
-  <option value="2">Neurology</option>
-  <option value="3">Dentistry</option>
-  <option value="4">Gastroenterology</option>
-</select>
-<br>
-<select class="form-select" aria-label="Default select example">
-  <option selected>Doctor</option>
-  <option value="1">John Doe</option>
-  <option value="2">Ashton Jones</option>
-  <option value="3">Paula Helen</option>
-</select>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label"></label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Write your message here"></textarea>
-</div>
-<button type="submit" class="bookappointmemt">Book an Appointment</button>
 <p>(We will confirm by a mail....)</p>
 <div class="newsletter">
   <img srcset="" src="/contact-img.jpg" alt="" >
   <h3>Signup For a newsletter</h3>
 </div>
-<p class="newsp">Your Health, Our Priority – Subscribe for Updates and Care Tips!</p>
-<div class="mb-3">
+<p class="newsp container">Your Health, Our Priority – Subscribe for Updates and Care Tips!</p>
+<div class="mb-3 container">
   <input type="email" class="form-control" id="newsletterEmail" placeholder="name@example.com">
 </div>
 <div class="subcontainer">
-  <p id="subscribe">Subscribe</p>
+  <p id="subscribe" style="cursor: pointer; background-color: #007bff; color: white; padding: 10px; text-align: center; border-radius: 5px;">
+    Subscribe
+  </p>
 </div>
-</section>
 <footer>
     <div class="footer container py-5">
       <h3 class="quick-links">About Us</h3>
@@ -331,13 +329,103 @@ Our core values of compassion, integrity, and innovation drive us to continually
 <p class="cr">&copy;Copyright 2024|All right reserved <br> <a href="https://wave-x.vercel.app">WaveX</a></p>
   </footer>
   <!--AOS JS LIBRARY-->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--AOS JS LIBRARY-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
-  duration:3500;
+  // Initialize AOS (Animate On Scroll) with a duration
+  AOS.init({
+    duration: 3500 // Animation duration in milliseconds
+  });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  emailjs.init("A9NEt4yvnKfwIvNK0"); // Replace with your actual public key
+
+  document.querySelector(".bookappointment").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.querySelector("#name").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const department = document.querySelector("#department").value;
+    const doctor = document.querySelector("#doctor").value;
+    const message = document.querySelector("#message").value.trim();
+
+    // Validate form fields
+    if (!name || !email || !department || !doctor || !message) {
+      alert("All fields are required. Please complete the form.");
+      return;
+    }
+
+    const templateParams = {
+      name: name,
+      email: email,
+      department: department,
+      doctor: doctor,
+      message: message,
+    };
+
+    // Disable button to prevent multiple submissions
+    const button = document.querySelector(".bookappointment");
+    button.disabled = true;
+
+    // Send email
+    emailjs.send("service_1iwpwin", "template_cmnromc", templateParams)
+      .then(response => {
+        alert("Appointment booked successfully!");
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch(error => {
+        alert("Failed to book appointment. Please try again later.");
+        console.log("FAILED...", error);
+      })
+      .finally(() => {
+        button.disabled = false;
+      });
+  });
+  // Initialize EmailJS
+  emailjs.init("A9NEt4yvnKfwIvNK0"); // Replace with your actual public key
+
+  document.getElementById("subscribe").addEventListener("click", function () {
+    const email = document.getElementById("newsletterEmail").value.trim();
+
+    // Validate the email input
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Prepare EmailJS template parameters
+    const templateParams = {
+      email: email, // Pass the email entered
+    };
+
+    // Disable the subscribe button temporarily
+    const subscribeButton = document.getElementById("subscribe");
+    subscribeButton.textContent = "Subscribing...";
+    subscribeButton.style.pointerEvents = "none";
+
+    // Send email using EmailJS
+    emailjs.send("service_1iwpwin", "template_8yvosr8", templateParams) // Replace with your Service ID and Template ID
+      .then(response => {
+        alert("Thank you for subscribing!");
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch(error => {
+        alert("Subscription failed. Please try again later.");
+        console.log("FAILED...", error);
+      })
+      .finally(() => {
+        subscribeButton.textContent = "Subscribe";
+        subscribeButton.style.pointerEvents = "auto"; // Re-enable the button
+      });
+  });
+</script>
+
 <script src="index.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script></body>
+  
+  </body>
 </html>
