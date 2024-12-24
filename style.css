@@ -319,7 +319,7 @@ option{
   font-size:14px;
 }
 .newsp{
-  text-align: center;
+  text-align: center !important;
 }
 .subcontainer{
   display: flex;
