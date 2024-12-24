@@ -1,0 +1,467 @@
+@font-face {
+  font-family: myFont;
+  src: url(/fonts/wakile.ttf);
+}
+
+html{
+  overflow-x: hidden;
+}
+
+#header{
+  font-family:myFont;
+  letter-spacing: 2px;
+}
+
+#highlight{
+  color: #3261CB;
+}
+
+.hero-text{
+  text-transform: uppercase;
+}
+
+.carousel-item img {
+object-fit: cover ;  
+width: 90%;
+  height: 60vh; /* Makes the image cover the full viewport height */
+    }
+    .carousel-caption {
+      text-align: left;
+      width: 70%;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 1em;
+      font-weight: 403;
+    }
+    
+    button{
+      margin :5px;
+    }
+    
+    .card{
+      background-color: #1B76D1EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cards{
+      display: flex;
+      align-items: center ;
+      justify-content: center;
+    }
+    
+    .card-title{
+      color: #fff;
+      padding: 5px;
+    }
+    
+    .card-text{
+      color: #fff ;
+      line-height: 1.5em;
+      text-align: left;
+    }
+    
+    .learn{
+      color: #fff;
+      text-transform: uppercase ;
+      font-size: 13px;
+      font-weight: 450;
+      text-decoration: none;
+    }
+    #rightarrow{
+      color: #fff;
+      vertical-align: center;
+      font-size: 30px;
+      width: 20em;
+      font-weight: 400;
+    }
+    
+#card1 {
+  background: #1B76D1EB url(/images/pulse-svgrepo-com.svg) no-repeat center center;
+  background-size: 100px;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+#card2 {
+  background: #1B76D1EB url(/images/schedule-calendar-svgrepo-com.svg) no-repeat center center;
+  background-size: 100px;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+#card3 {
+  background: #1B76D1EB url(/images/opening-hours-svgrepo-com.svg) no-repeat center center;
+  background-size: 100px;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+svg{
+  fill:white;
+  opacity: 0.5;
+}
+
+.time{
+  text-align: right;
+}
+
+#title{
+  padding: 5px;
+  text-align: center;
+  width :70%;
+  text-transform: uppercase;
+}
+
+.hb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-17px);
+}
+.support-message{
+  text-align: center;
+  width: 100%;
+  font-weight: 250;
+}
+#counter-section {
+  width: 95%;
+  color: #fff;
+  background :#1B76D1EB;
+  display: block;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5px 0;
+  min-height: 300px; /* Just for visibility */
+}
+
+#specialist-doctor,
+#happy-patient,
+#years-experience {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.numbers{
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+
+#no{
+  margin: 3px 0;
+  font-family: monospace;
+}
+
+#numberimg {
+  border: 1px solid #fff; 
+  border-radius: 50%; 
+  padding: 10px;
+  width: 50px; 
+  height: 51px; 
+  }
+  
+  .WWE {
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-top: 2rem; 
+    position: relative; /* Needed for positioning the :after element */
+}
+
+.WWE:after {
+    content: "";
+    background: #1B76D1EB;
+    width: 20%;
+    height: 3px; /* Fixed height for a visible bar */
+    position: absolute; /* Positioning the element */
+    left:5%;
+    bottom: -0.5rem; /* Adjust position below the text */
+    transform: translateX(-0%); /* Centers it exactly */
+}
+
+.wweText{
+  font-weight: 350;
+  font-size: 15px;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.play-icon {
+  fill: #1B76D1EB; /* Color of the play icon */
+  width: 24px;
+  height: 24px;
+}
+
+button{
+  padding :8px 8px 8px 8px;
+  border: none;
+  border-radius:4px ;
+}
+#CTA{
+  display: flex;
+  align-items: center;
+  justify-content:center; 
+}
+#contact{
+  color : #1B76D1EB;
+  background: #fff;
+}
+
+#contact:hover{
+  color : #fff;
+  background: #1B76D1EB;
+  border: 1px solid #fff;
+}
+
+#learn{
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+#learn:hover{
+  background-color: #fff;
+  border: 1px solid #1B76D1EB;
+  color: #1B76D1EB;
+}
+#arrow{
+  display: inline-flex;
+  vertical-align: center;
+}
+.sect4{
+  transform: translateY(3rem);
+  background: #1B76D1EB;
+}
+#title4{
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+  line-height:2rem; 
+  color: #fff;
+  padding-top: 1rem;
+}
+#paidservice{
+  padding-top: 5rem;
+  text-align: center; 
+  text-transform: capitalize;
+  width:75%; 
+  word-spacing: 0.1rem;
+  letter-spacing: 2px;
+}
+
+#card4{
+  background: #fff;
+  color: black ;
+  margin: 3%;
+}
+
+.pricing .card-title{
+  color :#000;
+}
+.pricing #text{
+  color :#000;
+}
+.pricehighlight{
+  text-align: center; 
+  font-size: 2em;
+  font-weight: bold;
+  color: #1B76D1EB;
+}
+.price{
+  font-size: 17px;
+  font-weight: 200;
+  color :#000;
+}
+
+#book{
+  width: 80%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.bookappointmemt{
+  background:#1B76D1EB;
+  color : white;
+}
+
+option{
+  opacity: 0.7;
+}
+
+.newsletter{
+  text-align: center;
+}
+
+.newsletter img{
+  width: 100%;
+}
+
+.newsletter h3{
+  padding-top: 5%;
+}
+
+.newsletter p{
+  font-family: monospace ;
+  font-size:14px;
+}
+
+.subcontainer{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+#subscribe{
+  background:#1B76D1EB;
+  width: 90%;
+  color :white;
+  padding: 9px 7px 9px 7px;
+  border-radius:5px;
+  text-align: center;
+}
+
+#subscribe:active{
+  background: #1B68D1EB
+}
+ footer {
+      background-color: #1B68D1EB; /* Light grey background */
+      padding: 20px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer.container {
+      margin-bottom: 5px;
+    }
+
+    .abt {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fff; /* Darker text */
+    }
+
+    footer p {
+      color: #fff; /* Muted text */
+      font-size: 16px;
+      margin: 0 0 20px;
+    }
+
+    /* Social Icons */
+    footer a {
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 24px; /* Icon size */
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .facebook-icon {
+      color: #fff; 
+    }
+
+    .google-icon {
+      color: #fff; 
+    }
+
+    .pinterest-icon {
+      color: #fff;
+    }
+
+    /* Hover Effect */
+    footer a:hover {
+      transform: scale(1.2);
+    }
+
+    .quick-links {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #fff;
+      position: relative;
+    }
+    
+    .quick-links:after{
+      content: "";
+      height: 15%;
+      width:10%;
+      background-color: #fff;
+      position: absolute;
+      bottom: -0.5rem;
+      left: 10%;
+      transform: translateY(-15%)
+    }
+   li{
+  color: white;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between; 
+  margin-bottom: 5px; 
+}
+ul a{
+  font-size: 17px;
+}
+.dateRight {
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.dateRight {
+  text-align: right;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+input {
+  border: none;
+  padding: 10px;
+  flex: 1;
+  outline: none;
+  width :89%;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+#send {
+  width: 51px;
+  height: 40px;
+}
+
+ .cr{
+   transform: translateY(5rem);
+   text-align: center;
+   color:black;
+   background: #F8F9FA;
+   height: 10%;
+ }
+ 
+ .cr a{
+   color:#000;
+   font-size: 18px;
+   font-family: monospace;
+ }
+ 
+ .priceCard{
+   display: flex;
+   justify-content: center ;
+   align-items: center;
+   }
