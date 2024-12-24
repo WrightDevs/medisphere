@@ -314,6 +314,7 @@ option{
 }
 
 .newsletter p{
+  text-align: center;
   font-family: monospace ;
   font-size:14px;
 }
@@ -402,7 +403,7 @@ option{
     }
    li{
   color: white;
-  margin: 10px 0;
+  margin: 5px 0;
   display: flex;
   justify-content: space-between; 
   margin-bottom: 5px; 
